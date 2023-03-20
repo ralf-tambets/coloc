@@ -1,0 +1,2 @@
+gwas_subset	gwas_clpp	gwas_coloc3	gwas_coloc5
+SAMPLE_DATASET	/path/to/SAMPLE_DATASET.clpp.tsv.gz	/path/to/SAMPLE_DATASET.coloc3.tsv.gz	/path/to/SAMPLE_DATASET.coloc5.tsv.gz

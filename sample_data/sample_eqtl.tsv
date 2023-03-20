@@ -1,0 +1,2 @@
+eqtl_dataset_id	eqtl_sumstats	eqtl_sumstats_index	eqtl_permuted	eqtl_credible_sets	eqtl_lbf
+SAMPLE_DATASET	/path/to/SAMPLE_DATASET.cc.tsv.gz	/path/to/SAMPLE_DATASET.cc.tsv.gz.tbi	/path/to/SAMPLE_DATASET.permuted.tsv.gz	/path/to/SAMPLE_DATASET.credible_sets.tsv.gz	/path/to/SAMPLE_DATASET.lbf_variable.txt.gz

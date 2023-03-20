@@ -37,3 +37,15 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Nextflow folders
+**/._*
+**/.DS_Store
+work*/*
+results*/*
+data*/*
+slurm-*.out
+.nextflow*
+singularity_img/*
+*.tsv.gz
+/test_*

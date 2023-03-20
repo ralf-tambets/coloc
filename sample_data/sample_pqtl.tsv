@@ -1,0 +1,2 @@
+pqtl_dataset_id	pqtl_sumstats	pqtl_sumstats_index	pqtl_permuted	pqtl_credible_sets	pqtl_lbf
+SAMPLE_DATASET	/path/to/SAMPLE_DATASET.cc.tsv.gz	/path/to/SAMPLE_DATASET.cc.tsv.gz.tbi	/path/to/SAMPLE_DATASET.permuted.tsv.gz	/path/to/SAMPLE_DATASET.credible_sets.tsv.gz	/path/to/SAMPLE_DATASET.lbf_variable.txt.gz
