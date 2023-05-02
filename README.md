@@ -17,11 +17,8 @@ To run the workflow, submit `run_pqtl.sh` or `run_gwas` to HPC.
 Input parameters:
 
 *  **--eqtl_tsv** TSV file with 6 columns. Example in `sample_data/sample_eqtl.tsv`.
-
 *  **eqtl_dataset_id** Dataset name or identifier.
-
 *  **eqtl_sumstats** Summary statistics file containing the following columns: molecular_trait_id, chromosome, position, ref, alt, variant, ma_samples, maf, pvalue, beta, se, type, ac, an, r2, molecular_trait_object_id, gene_id, median_tpm, rsid
-
 *  **eqtl_sumstats_index** Tabix-generated index file for the summary statistics file.
 
 *  **eqtl_permuted** Permutation file containing the following columns: molecular_trait_object_id, molecular_trait_id, n_traits, n_variants, variant, chromosome, position, pvalue, beta, p_perm, p_beta
@@ -56,5 +53,11 @@ molecular_trait_id, region, variant, chromosome, position, lbf_variable1, lbf_va
 
 ## Bioinformatics example
 1. Download necessary files and place them into `bioinformatics_example/bioinformatics_data`. The necessary files are specified in the `.tsv` files in `bioinformatics_example/`.
-2. Navigate to main folder, start workflow execution from terminal with the command `sbatch run_bioinformatics_gwas.sh` or `sbatch run_bioinformatics_pqtl.sh`.
-3. The results will appear in `results_gwas/` or `results_pqtl/`, respectively.
+	* eQTL folders: 
+		* http://ftp.ebi.ac.uk/pub/databases/spot/eQTL/sumstats/QTS000013/QTD000110/
+		* http://ftp.ebi.ac.uk/pub/databases/spot/eQTL/susie/QTS000013/QTD000110/
+	* pQTL folders: 
+		* http://ftp.ebi.ac.uk/pub/databases/spot/eQTL/sumstats/QTS000035/QTD000584/
+		* http://ftp.ebi.ac.uk/pub/databases/spot/eQTL/susie/QTS000035/QTD000584/
+2. Navigate to main folder, start workflow execution from terminal with the command `sbatch run_bioinformatics_gwas.sh` or `sbatch run_bioinformatics_pqtl.sh`
+3. The results will appear in `results_gwas` or `results_pqtl`, respectively.
