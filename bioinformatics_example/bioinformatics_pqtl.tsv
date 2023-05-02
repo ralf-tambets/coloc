@@ -1,0 +1,2 @@
+pqtl_dataset_id	pqtl_sumstats	pqtl_sumstats_index	pqtl_permuted	pqtl_credible_sets	pqtl_lbf
+QTD000584	bioinformatics_example/bioinformatics_data/QTD000584.cc.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000584.cc.tsv.gz.tbi	bioinformatics_example/bioinformatics_data/QTD000584.permuted.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000584.credible_sets.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000584.lbf_variable.txt.gz

@@ -47,5 +47,6 @@ data*/*
 slurm-*.out
 .nextflow*
 singularity_img/*
-*.tsv.gz
+*.tsv.gz*
+*.txt.gz*
 /test_*

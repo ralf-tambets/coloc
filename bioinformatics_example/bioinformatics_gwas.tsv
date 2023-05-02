@@ -1,0 +1,2 @@
+gwas_subset	gwas_clpp	gwas_coloc3	gwas_coloc5
+VitD	bioinformatics_example/bioinformatics_data/VitD.clpp_combined.tsv.gz	bioinformatics_example/bioinformatics_data/VitD.coloc3_combined.tsv.gz	bioinformatics_example/bioinformatics_data/VitD.coloc5_combined.tsv.gz

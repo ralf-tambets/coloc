@@ -1,0 +1,2 @@
+eqtl_dataset_id	eqtl_sumstats	eqtl_sumstats_index	eqtl_permuted	eqtl_credible_sets	eqtl_lbf
+QTD000110	bioinformatics_example/bioinformatics_data/QTD000110.cc.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000110.cc.tsv.gz.tbi	bioinformatics_example/bioinformatics_data/QTD000110.permuted.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000110.credible_sets.tsv.gz	bioinformatics_example/bioinformatics_data/QTD000110.lbf_variable.txt.gz

@@ -32,7 +32,7 @@ permutations <- permutations %>%
 
 metadata <- read_tsv(metadata_file)
   
-joined <- inner_join(permutations, metadata, by=c("molecular_trait_id"="phenotype_id")) %>%
+joined <- inner_join(permutations, metadata, by=c("molecular_trait_object_id"="phenotype_id")) %>%
   select(molecular_trait_id, chromosome, phenotype_pos) %>%
   mutate(startpos = pmax(1, phenotype_pos-1000000), endpos = phenotype_pos+1000000) %>%
   select(-phenotype_pos) %>%

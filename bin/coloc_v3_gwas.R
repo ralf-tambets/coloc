@@ -107,6 +107,11 @@ coloc_in_region <- function(eqtl_gene_name, selected_eqtl_gene, gwas_regions_in_
     N = selected_eqtl_gene_clone$an/2
     MAF = selected_eqtl_gene_clone$maf
 
+    if(!is.numeric(MAF) || any(is.na(MAF)) || any(MAF<=0) || any(MAF>=1)) {
+      message("MAF not allowed")
+      next
+    }
+
     #sdY.est checks
     is_oneover_na = all(is.na(1/varbeta))
     is_nvx_na = all(is.na(2*N*MAF*(1-MAF)))
@@ -126,6 +131,11 @@ coloc_in_region <- function(eqtl_gene_name, selected_eqtl_gene, gwas_regions_in_
     varbeta = selected_gwas_region$se^2
     N = selected_gwas_region$an/2
     MAF = selected_gwas_region$maf
+
+    if(!is.numeric(MAF) || any(is.na(MAF)) || any(MAF<=0) || any(MAF>=1)) {
+      message("MAF not allowed")
+      next
+    }
 
     #sdY.est checks
     is_oneover_na = all(is.na(1/varbeta))
@@ -184,12 +194,11 @@ coloc_per_gene <- function(eqtl_gene_name, eqtl_gene_table, gwas_file, reference
     filter(!is.nan(se)) %>%
     filter(!is.na(se)) %>%
     select(molecular_trait_id, variant, maf, beta, se, an)
-  message(paste0("eqtl geen valitud ", nrow(selected_eqtl_gene)))
+  message(paste("eqtl geen valitud", eqtl_gene_name, nrow(selected_eqtl_gene)))
   if (nrow(selected_eqtl_gene)<300){
     message("Not enough rows.")
     return(coloc_results)
   }
-  
 
   gene_reference <- reference_table[reference_table$molecular_trait_id == eqtl_gene_name,]
   gwas_regions_in_region <- gwas_region_table %>%
