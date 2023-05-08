@@ -154,7 +154,7 @@ coloc_per_gene <- function(eqtl_gene_name, eqtl_gene_table, gwas_file, reference
 
 eqtl_gene_table <- tabix.read.table(eqtl_file, tabixRange=paste0(chromosome, ":1-2147483647"))
 coloc_results <- data.frame()
-if (!is.na(eqtl_gene_table) && nrow(eqtl_gene_table)>0){
+if (!is.null(eqtl_gene_table) && nrow(eqtl_gene_table)>0){
   colnames(eqtl_gene_table) <- c("molecular_trait_id", "region", "variant", "chromosome", "position", paste0("lbf_variable",1:10))
   
   reference_table <- read_tsv(reference_file)

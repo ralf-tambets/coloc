@@ -44,7 +44,7 @@ joined <- inner_join(eqtl, pqtl, by=c("variant")) %>%
   
 grouped <- joined %>%
   group_by(unique_id, eqtl_cs_id) %>%
-  summarise(unique_id, eqtl_cs_id, clpp_cs = sum(clpp_variant), n_snps = n()) %>%
+  reframe(unique_id, eqtl_cs_id, clpp_cs = sum(clpp_variant), n_snps = n()) %>%
   ungroup() %>%
   distinct()
 
@@ -64,7 +64,7 @@ if (!is.null(output_prefix)) {
   clpp_file_name = file.path(outdir, "no_clpp_output_prefix_given.tsv")
 }
 
-if(!is.na(clpp_results) && nrow(clpp_results) > 0){
+if(!is.null(clpp_results) && nrow(clpp_results) > 0){
   message(" ## write colocalisation results to ", clpp_file_name )
   write_tsv(clpp_results, clpp_file_name)
 } else {

@@ -1,5 +1,5 @@
 process tabix_by_chr_position{
-    container 'quay.io/eqtlcatalogue/colocalisation:latest'
+    container 'quay.io/eqtlcatalogue/colocalisation:v21.01.1'
 
     input:
     tuple val(dataset_id), file(sumstats), file(sumstats_index), file(permuted), file(credible_sets), file(lbf)
@@ -15,7 +15,7 @@ process tabix_by_chr_position{
 }
 
 process run_coloc_v5{
-    container = 'quay.io/eqtlcatalogue/susier:v21.08.1'
+    container = 'quay.io/eqtlcatalogue/coloc:v23.05.1'
 
     input:
     tuple val(chr), val(batch), val(eqtl_dataset_id), file(reference_file), file(eqtl_file), file(eqtl_index), val(pqtl_dataset_id), file(pqtl_file), file(pqtl_index)
@@ -38,7 +38,7 @@ process run_coloc_v5{
 
 process merge_coloc_v5_results{
     publishDir "${params.outdir}/coloc_v5_results_merged/${qtl_subset}", mode: 'copy'
-    container 'quay.io/eqtlcatalogue/colocalisation:latest'
+    container 'quay.io/eqtlcatalogue/colocalisation:v21.01.1'
 
     input:
     tuple val(qtl_subset), val(pqtl_qtl_id), file(pqtl_qtl_coloc_results_batch_files)

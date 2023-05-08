@@ -1,5 +1,5 @@
 process tabix_eqtl_by_chr_position{
-    container 'quay.io/eqtlcatalogue/colocalisation:latest'
+    container 'quay.io/eqtlcatalogue/colocalisation:v21.01.1'
 
     input:
     tuple val(eqtl_dataset_id), file(eqtl_ss), file(eqtl_ss_index), file(eqtl_permuted), file(eqtl_credible_sets), file(eqtl_lbf)
@@ -15,7 +15,7 @@ process tabix_eqtl_by_chr_position{
 }
 
 process tabix_gwas_by_chr_position{
-    container 'quay.io/eqtlcatalogue/colocalisation:latest'
+    container 'quay.io/eqtlcatalogue/colocalisation:v21.01.1'
 
     input:
     tuple val(gwas_subset), file(gwas_clpp), file(gwas_coloc3), file(gwas_coloc5)
@@ -31,7 +31,7 @@ process tabix_gwas_by_chr_position{
 }
 
 process run_coloc_v5{
-    container = 'quay.io/eqtlcatalogue/susier:v21.08.1'
+    container = 'quay.io/eqtlcatalogue/coloc:v23.05.1'
 
     input:
     tuple val(chr), val(batch), val(eqtl_dataset_id), file(reference_file), file(eqtl_file), file(eqtl_index), val(gwas_subset), file(gwas_file), file(gwas_index)
@@ -54,7 +54,7 @@ process run_coloc_v5{
 
 process merge_coloc_v5_results{
     publishDir "${params.outdir}/coloc_v5_results_merged/${eqtl_dataset_id}", mode: 'copy'
-    container 'quay.io/eqtlcatalogue/colocalisation:latest'
+    container 'quay.io/eqtlcatalogue/colocalisation:v21.01.1'
 
     input:
     tuple val(eqtl_dataset_id), val(gwas_eqtl_id), file(gwas_eqtl_coloc_results_batch_files)

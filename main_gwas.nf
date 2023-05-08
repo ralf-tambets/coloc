@@ -17,8 +17,8 @@ Channel.fromList(params.chromosomes.split(",") as List)
     .set{ chromosome_ch }
 
 process create_reference_file{
-    container 'quay.io/eqtlcatalogue/susier:v21.08.1'
-
+    container = 'quay.io/eqtlcatalogue/coloc:v23.05.1'
+    
     input:
     tuple val(eqtl_dataset_id), file(eqtl_sumstats), file(eqtl_sumstats_index), file(eqtl_permuted), file(eqtl_credible_sets), file(eqtl_lbf)
 
@@ -36,7 +36,7 @@ process create_reference_file{
 
 process run_clpp{
     publishDir "${params.outdir}/clpp_results/${eqtl_dataset_id}", mode: 'copy'
-    container 'quay.io/eqtlcatalogue/susier:v21.08.1'
+    container = 'quay.io/eqtlcatalogue/coloc:v23.05.1'
 
     input:
     tuple val(eqtl_dataset_id), file(eqtl_sumstats), file(eqtl_sumstats_index), file(eqtl_permuted), file(eqtl_credible_sets), file(eqtl_lbf), val(gwas_subset), file(gwas_clpp), file(gwas_coloc3), file(gwas_coloc5)
